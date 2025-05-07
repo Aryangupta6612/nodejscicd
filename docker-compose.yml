@@ -2,6 +2,6 @@ services:
   app:
     build: .
     ports:
-      - "4001:4000"
+      - "0:4000"
     deploy:
       replicas: 3
