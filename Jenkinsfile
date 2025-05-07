@@ -23,7 +23,7 @@ pipeline{
         success{
             echo "Build and Deploy successful"
         }
-        fail{
+        failure{
             echo "Build and Deploy fail"
         }
     }
