@@ -9,8 +9,8 @@ pipeline{
         stage('Build and Deploy'){
             steps{
                 sh '''
-                    docker compose down || true
-                    docker compose up -d --build
+                    docker-compose down || true
+                    docker-compose up -d --build
                 '''
             }
         }
@@ -18,7 +18,7 @@ pipeline{
     post{
         always{
             sh 'docker container prune -f||true'
-            sh 'docker image prunt -f||true'
+            sh 'docker image prune -f||true'
         }
         success{
             echo "Build and Deploy successful"
